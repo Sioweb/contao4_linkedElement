@@ -35,13 +35,7 @@
             "src/Resources/contao/templates/"
         ]
     },
-    "config": {
-        "preferred-install": "dist"
-    },
     "extra": {
-        "branch-alias": {
-            "dev-develop": "4.4.x-dev"
-        },
         "contao-manager-plugin": "Sioweb\\LinkedElementBundle\\ContaoManager\\Plugin"
     }
 }
