@@ -31,6 +31,7 @@ class LinkedElement extends \Frontend
 			
 			$elementObject->element = preg_replace('/<a([^>]*)>([^<]*)\<\/a>/is','<span$1>$2</span>',$strBuffer);
 			
+			// @todo Use one regex: ( href="[^"]*"| target="[^"]*"| name="[^"]*"| rel="[^"]*")
 			$elementObject->element = preg_replace('/<span([^h]*)href[^=]*=[^"]*"[^"]*"([^>]*)>/is','<span$1$2>',$elementObject->element);
 			$elementObject->element = preg_replace('/<span([^h]*)name[^=]*=[^"]*"[^"]*"([^>]*)>/is','<span$1$2>',$elementObject->element);
 			$elementObject->element = preg_replace('/<span([^h]*)target[^=]*=[^"]*"[^"]*"([^>]*)>/is','<span$1$2>',$elementObject->element);
