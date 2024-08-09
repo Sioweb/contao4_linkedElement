@@ -11,12 +11,8 @@ use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
  *
  * @author Sascha Weidner <https://www.sioweb.de>
  */
-
 class Plugin implements BundlePluginInterface
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getBundles(ParserInterface $parser)
     {
         return [

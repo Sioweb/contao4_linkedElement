@@ -4,7 +4,7 @@
  * Contao Open Source CMS
  */
 
-namespace Sioweb;
+namespace contao\classes;
 use Contao\Frontend;
 use Contao\FrontendTemplate;
 

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /*
  * Contao Open Source CMS
@@ -10,7 +10,7 @@
 * @version 3.1.0
 * @package sioweb.contao.extensions.ce
 * @copyright Sascha Weidner, Sioweb
-* 
+*
 */
 
 
