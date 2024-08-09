@@ -1,23 +1,25 @@
 <?php
 
-/*
- * Contao Open Source CMS
- */
+declare(strict_types=1);
 
 /**
- * @file tl_content.php
- * @author Sascha Weidner
- * @version 3.1.0
- * @package sioweb.contao.extensions.ce
- * @copyright Sascha Weidner, Sioweb
- *
+ * @author Sascha Weidner <https://www.sioweb.de>
+ * @copyright Sioweb, Sascha Weidner
  */
 
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
-foreach ($GLOBALS['TL_DCA']['tl_content']['palettes'] as $pKey => &$palette)
+// Extend the default palettes
+$objPalette = PaletteManipulator::create()
+    ->addField(['linkedElement', 'linkedElementTarget'], 'type_legend', PaletteManipulator::POSITION_APPEND)
+    ->applyToPalette('default', 'tl_content')
+;
+
+foreach ($GLOBALS['TL_DCA']['tl_content']['palettes'] as $name => $palette)
 {
-    if (!is_array($palette)) {
-        $palette = preg_replace('/(\{type_legend\},[^;]+);/is', '$1,linkedElement,linkedElementTarget;', $palette);
+    if (!is_array($palette))
+    {
+        $objPalette->applyToPalette($name, 'tl_content');
     }
 }
 

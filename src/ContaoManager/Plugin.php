@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Sioweb\LinkedElementBundle\ContaoManager;
 
 use Contao\CoreBundle\ContaoCoreBundle;
