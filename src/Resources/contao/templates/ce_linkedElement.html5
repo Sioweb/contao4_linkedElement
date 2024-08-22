@@ -1,3 +1,0 @@
-<a href="<?= $this->linkedElement;?>" class="ce_linkedElement block"<?php echo ($this->linkedElementTarget?' target="_blank"':'');?>>
-	<?= $this->element;?> 
-</a>

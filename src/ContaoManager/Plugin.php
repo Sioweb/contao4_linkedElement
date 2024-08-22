@@ -1,28 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Sioweb\LinkedElementBundle\ContaoManager;
 
+use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
-
-/**
- * Plugin for the Contao Manager.
- *
- * @author Sascha Weidner <https://www.sioweb.de>
- */
+use Sioweb\LinkedElementBundle\SiowebLinkedElementBundle;
 
 class Plugin implements BundlePluginInterface
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getBundles(ParserInterface $parser)
     {
         return [
-            BundleConfig::create('Sioweb\LinkedElementBundle\SiowebLinkedElementBundle')
-                ->setLoadAfter(['Contao\CoreBundle\ContaoCoreBundle'])
-                ->setReplace(['sioweblinkedelement']),
+            BundleConfig::create(SiowebLinkedElementBundle::class)
+                ->setReplace(['sioweblinkedelement'])
+                ->setLoadAfter([ContaoCoreBundle::class])
         ];
     }
 }
